@@ -30,6 +30,15 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 
 ### Jekyll Themes
 <button class="button button1">Green</button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+      axios
+        .get("https://jsonplaceholder.typicode.com/users")
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => console.error(error));
+    </script>
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sujoyb2/DM-project/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
