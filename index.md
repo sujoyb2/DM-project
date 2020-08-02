@@ -30,16 +30,17 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 
 ### Jekyll Themes
 <button class="button button1">Green</button>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-      axios
-        .get("https://jsonplaceholder.typicode.com/users")
-        .then(response => {
-          console.log(response.data);
-        })
-        .catch(error => console.error(error));
+      async function getUsers() {
+        let response = await fetch(
+          "http://ec2-3-87-43-244.compute-1.amazonaws.com/countme/abcd"
+        );
+        let data = await response.json();
+        return data;
+      }
+      getUsers().then(data => console.log(data));
     </script>
-
+    
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sujoyb2/DM-project/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
