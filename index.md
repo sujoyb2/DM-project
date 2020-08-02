@@ -29,13 +29,15 @@ Syntax highlighted code block
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
-<button class="button button1">Green</button>
+<button class="button button1" onclick="getUsers()">Green</button>
 <script>
       async function getUsers() {
         let response = await fetch(
           "http://ec2-3-87-43-244.compute-1.amazonaws.com/countme/abcd"
         );
         let data = await response.json();
+        console.log("sujoy")
+        console.log(data)
         return data;
       }
       getUsers().then(data => console.log(data));
